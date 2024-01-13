@@ -1,0 +1,30 @@
+{
+    "version": 8,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 28,
+        "patch": 1
+      },
+    "configurePresets": [
+      {
+        "name": "default",
+        "binaryDir": "${sourceDir}/build",
+        "generator": "Ninja",
+        "cacheVariables": {
+          "CMAKE_TOOLCHAIN_FILE": {
+            "type": "PATH",
+            "value": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+          },
+          "VCPKG_INSTALLED_DIR": {
+            "type": "PATH",
+            "value": "${sourceDir}/../angohr-installed"
+          },
+          "VCPKG_TARGET_TRIPLET": {
+            "type": "STRING",
+            "value": "x64-linux-shared"
+          }
+        }
+      }
+    ]
+  }
+  
