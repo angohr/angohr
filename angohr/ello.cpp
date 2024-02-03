@@ -1,6 +1,6 @@
 module;
 
-#include <iostream>
+#include <fmt/core.h>
 
 export module core : iface.ello;
 
@@ -13,6 +13,6 @@ public:
 
 ello::ello() = default;
 void ello::hello() {
-  std::cout << "Why hello!\n";
+  fmt::print("Why hello!!!\n");
 }
 }

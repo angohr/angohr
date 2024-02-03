@@ -1,9 +1,12 @@
+find_package(fmt CONFIG REQUIRED)
+
 add_library(core)
 target_sources(core
   PUBLIC
     FILE_SET CXX_MODULES FILES
       core.cpp
       ello.cpp)
+target_link_libraries(core PRIVATE fmt::fmt)
 
 add_executable(angohr angohr.cpp)
 
