@@ -11,6 +11,18 @@
       "binaryDir": "${sourceDir}/build",
       "generator": "Ninja",
       "cacheVariables": {
+        "CMAKE_C_COMPILER": {
+          "type": "STRING",
+          "value": "clang"
+        },
+        "CMAKE_CXX_COMPILER": {
+          "type": "STRING",
+          "value": "clang++"
+        },
+        "CMAKE_EXPORT_COMPILE_COMMANDS": {
+          "type": "BOOL",
+          "value": "ON"
+        },
         "CMAKE_TOOLCHAIN_FILE": {
           "type": "PATH",
           "value": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
