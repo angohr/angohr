@@ -14,5 +14,6 @@ TEST(HelloTest, BasicAssertions) {
 TEST(HelloTest, ModuleImport) {
   core::ello hello;
   hello.hello();
+  hello.logSomething();
   EXPECT_EQ(hello.theAnswer(), 42);
 }
