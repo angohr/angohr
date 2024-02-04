@@ -4,3 +4,4 @@ CMakeUserPresets.json
 # Standard locations for the build tree and binary assets.
 build/
 vcpkg-installed/
+.cache/

@@ -7,3 +7,10 @@ project(angohr
   LANGUAGES CXX)
 
 add_subdirectory(angohr)
+
+option(BUILD_TESTS "Build tests for the project" ON)
+
+if(BUILD_TESTS)
+  enable_testing()
+  add_subdirectory(tests)
+endif()

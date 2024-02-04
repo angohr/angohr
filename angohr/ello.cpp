@@ -9,10 +9,14 @@ export class ello {
 public:
   ello();
   void hello();
+  int theAnswer();
 };
 
 ello::ello() = default;
 void ello::hello() {
   fmt::print("Why hello!!!\n");
+}
+int ello::theAnswer() {
+  return 42;
 }
 }
