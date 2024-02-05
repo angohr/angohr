@@ -1,5 +1,9 @@
+// SPDX-FileCopyrightText: Copyright contributors to the Angohr project
+// SPDX-License-Identifier: BSD-3-Clause
+
 module;
 
+#include <algorithm>
 #include <fmt/core.h>
 #include <spdlog/spdlog.h>
 

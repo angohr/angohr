@@ -11,10 +11,6 @@
       "binaryDir": "${sourceDir}/build",
       "generator": "Ninja",
       "cacheVariables": {
-        "CMAKE_C_COMPILER": {
-          "type": "STRING",
-          "value": "clang"
-        },
         "CMAKE_CXX_COMPILER": {
           "type": "STRING",
           "value": "clang++"
@@ -36,6 +32,19 @@
           "value": "x64-linux-dynamic"
         }
       }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "default",
+      "configurePreset": "default"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "default",
+      "configurePreset": "default",
+      "execution": { "noTestsAction": "error", "stopOnFailure": true }
     }
   ]
 }
