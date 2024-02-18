@@ -2,6 +2,9 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 find_package(fmt CONFIG REQUIRED)
+find_package(DuckDB CONFIG REQUIRED)
+# This is just for DuckDB...their config file doesn't find Threads.
+find_package(Threads REQUIRED)
 
 add_library(core)
 target_sources(core
@@ -9,8 +12,9 @@ target_sources(core
     FILE_SET CXX_MODULES FILES
       array.cpp
       core.cpp
+      database.cpp
       ello.cpp)
-target_link_libraries(core PRIVATE fmt::fmt)
+target_link_libraries(core PRIVATE fmt::fmt duckdb)
 add_library(angohr::core ALIAS core)
 
 add_executable(angohr angohr.cpp)

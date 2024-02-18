@@ -5,4 +5,6 @@ export module core;
 
 export import : iface.array;
 
+export import : iface.database;
+
 export import : iface.ello;

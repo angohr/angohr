@@ -3,7 +3,7 @@
 
 find_package(GTest CONFIG REQUIRED)
 
-add_executable(angohr-test angohr-test.cpp)
+add_executable(angohr-test angohr-test.cpp database-test.cpp)
 target_link_libraries(angohr-test PRIVATE GTest::gtest GTest::gtest_main angohr::core)
 set_target_properties(angohr-test
   PROPERTIES

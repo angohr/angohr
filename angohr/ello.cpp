@@ -3,7 +3,7 @@
 
 module;
 
-#include <algorithm>
+#include <algorithm> // Included to avoid a duplicate symbol error
 #include <fmt/core.h>
 #include <spdlog/spdlog.h>
 
