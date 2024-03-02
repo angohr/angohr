@@ -4,6 +4,7 @@
 module;
 
 #include <duckdb.hpp>
+#include <fmt/core.h>
 
 export module core : iface.database;
 
@@ -24,7 +25,22 @@ public:
   {
     if (m_result)
       return m_result->names;
+    m_result->GetValue(0, 0);
     return std::vector<std::string>();
+  }
+  int columnCount() {
+    if (m_result)
+      return m_result->ColumnCount();
+    return -1;
+  }
+  int chunk() {
+    auto chonk = m_result->Fetch();
+    fmt::print("We have {} columns and {} values\n", chonk->ColumnCount(), chonk->size());
+    auto i = chonk->data[0];
+    fmt::print("A column with {} values and {} type\n", i.GetValue(0).ToString(), i.GetType().ToString());
+    int* values = reinterpret_cast<int*>(i.GetData());
+    fmt::print("{}, {}, {}\n", values[0], values[1], values[3]);
+    return chonk->size();
   }
 private:
   std::unique_ptr<duckdb::MaterializedQueryResult> m_result;
@@ -60,7 +76,7 @@ QueryResult Database::query(std::string query)
 void Database::print(std::string query)
 {
   auto result = m_conn->Query(query);
-  result->Print();
+  //result->Print();
 }
 
 }
