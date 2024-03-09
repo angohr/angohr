@@ -10,7 +10,7 @@ set_target_properties(angohr-test
     CXX_STANDARD 20
     CXX_STANDARD_REQUIRED ON
     CXX_EXTENSIONS OFF
-    COMPILE_WARNINGS_AS_ERRORS ON)
+    COMPILE_WARNING_AS_ERROR ON)
 
 #add_test(angohr-tests angohr-test)
 
