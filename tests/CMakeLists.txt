@@ -5,12 +5,7 @@ find_package(GTest CONFIG REQUIRED)
 
 add_executable(angohr-test angohr-test.cpp database-test.cpp)
 target_link_libraries(angohr-test PRIVATE GTest::gtest GTest::gtest_main angohr::core)
-set_target_properties(angohr-test
-  PROPERTIES
-    CXX_STANDARD 20
-    CXX_STANDARD_REQUIRED ON
-    CXX_EXTENSIONS OFF
-    COMPILE_WARNING_AS_ERROR ON)
+angohr_target_properties(angohr-test)
 
 #add_test(angohr-tests angohr-test)
 

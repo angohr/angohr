@@ -20,17 +20,7 @@ add_library(angohr::core ALIAS core)
 
 add_executable(angohr angohr.cpp)
 
-set_target_properties(core
-  PROPERTIES
-    CXX_STANDARD 20
-    CXX_STANDARD_REQUIRED ON
-    CXX_EXTENSIONS OFF
-    COMPILE_WARNING_AS_ERROR ON)
-set_target_properties(angohr
-  PROPERTIES
-    CXX_STANDARD 20
-    CXX_STANDARD_REQUIRED ON
-    CXX_EXTENSIONS OFF
-    COMPILE_WARNING_AS_ERROR ON)
+angohr_target_properties(core)
+angohr_target_properties(angohr)
 
 target_link_libraries(angohr PRIVATE core)
