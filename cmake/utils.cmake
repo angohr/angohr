@@ -8,4 +8,5 @@ function(angohr_target_properties TARGET)
       CXX_STANDARD_REQUIRED ON
       CXX_EXTENSIONS OFF
       COMPILE_WARNING_AS_ERROR ON)
+  target_compile_options(${TARGET} PRIVATE -Wall -Wextra)
 endfunction()
