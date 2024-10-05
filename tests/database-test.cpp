@@ -1,12 +1,12 @@
 // SPDX-FileCopyrightText: Copyright contributors to the Angohr project
 // SPDX-License-Identifier: BSD-3-Clause
 
-import core;
+import data;
 
 #include <gtest/gtest.h>
 
 TEST(Database, VerifyBasics) {
-  core::Database database;
+  data::Database database;
   database.query("CREATE TABLE integers (i INTEGER, j INTEGER)");
   database.query("INSERT INTO integers VALUES (3, 4), (5, 6), (7, NULL)");
   database.print("SELECT * FROM integers");
@@ -20,7 +20,7 @@ TEST(Database, VerifyBasics) {
 }
 
 TEST(Database, VerifyValues) {
-  core::Database database;
+  data::Database database;
   database.query("CREATE TABLE integers (i INTEGER, j INTEGER)");
   database.query("INSERT INTO integers VALUES (3, 4), (5, 6), (7, NULL)");
   database.print("SELECT * FROM integers");

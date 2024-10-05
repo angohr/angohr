@@ -6,9 +6,9 @@ module;
 #include <duckdb.hpp>
 #include <fmt/core.h>
 
-export module core : iface.database;
+export module data : iface.database;
 
-namespace core {
+namespace data {
 
 export class QueryResult
 {
