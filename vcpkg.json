@@ -1,3 +1,11 @@
 {
-  "dependencies": [ "fmt", "gtest", "spdlog" ]
+  "dependencies": [ "fmt", "spdlog" ],
+  "features": {
+    "tests": { "description": "Build tests",
+    "dependencies": [ "gtest", {
+      "name": "spdlog",
+      "features": [ "benchmark" ]
+    } ]
+   }
+  }
 }
