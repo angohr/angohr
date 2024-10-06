@@ -9,11 +9,6 @@ if(BUILD_TESTS)
   list(APPEND VCPKG_MANIFEST_FEATURES "tests")
 endif()
 
-# Set experimental flag to enable `import std` support from CMake.
-# This must be enabled before C++ language support.
-set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD
-  "0e5b6991-d74f-4b3d-a41c-cf096e0b2508")
-
 project(angohr
   VERSION 0.0.1
   DESCRIPTION "A revolutionary new thing I am working on"
