@@ -3,7 +3,8 @@
 
 module;
 
-#include <algorithm>
+import std;
+// #include <algorithm>
 
 export module core : iface.array;
 

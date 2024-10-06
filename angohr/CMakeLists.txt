@@ -14,7 +14,7 @@ target_sources(core
       array.cpp
       core.cpp
       ello.cpp)
-target_link_libraries(core PRIVATE fmt::fmt spdlog::spdlog)
+target_link_libraries(core PUBLIC fmt::fmt spdlog::spdlog)
 add_library(angohr::core ALIAS core)
 
 add_library(data)
@@ -23,13 +23,13 @@ target_sources(data
     FILE_SET CXX_MODULES FILES
       data.cpp
       database.cpp)
-target_link_libraries(data PRIVATE fmt::fmt duckdb)
+target_link_libraries(data PRIVATE fmt::fmt spdlog::spdlog duckdb)
 add_library(angohr::data ALIAS data)
 
 add_executable(angohr angohr.cpp)
 
-angohr_target_properties(core)
+angohr_target_properties(core IMPORT_STD)
 angohr_target_properties(data)
 angohr_target_properties(angohr)
 
-target_link_libraries(angohr PRIVATE core data)
+target_link_libraries(angohr PRIVATE angohr::core)
