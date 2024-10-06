@@ -24,6 +24,14 @@ TEST(Hello, ModuleImport) {
 TEST(Array, RefCount) {
   core::Array<int> array;
   EXPECT_EQ(array.ref(), 1);
+
+  // Check the copy constructor works as expected...
+  core::Array<int> array2(array);
+  EXPECT_EQ(array.ref(), 2);
+
+  // Test the assignment operator.
+  core::Array<int> array3 = array;
+  EXPECT_EQ(array.ref(), 3);
 }
 
 TEST(Array, Empty) {
@@ -52,4 +60,19 @@ TEST(Array, PushBack) {
   EXPECT_EQ(array.at(1), 42);
   EXPECT_EQ(array.at(2), 69);
   EXPECT_EQ(array.back(), 69);
+}
+
+TEST(Array, WriteDeep) {
+  core::Array<int> array;
+  array.push_back(5);
+  EXPECT_EQ(array.empty(), false);
+  EXPECT_EQ(array.size(), 1);
+  EXPECT_EQ(array.back(), 5);
+
+  core::Array<int> array2 = array;
+  EXPECT_EQ(array.ref(), 2);
+  array[0] = 9;
+  EXPECT_EQ(array.ref(), 1);
+  EXPECT_EQ(array[0], 9);
+  EXPECT_EQ(array2[0], 5);
 }
